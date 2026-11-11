@@ -28,7 +28,10 @@ def build(name: str, stage: Path) -> Path:
         '--collect-all', 'magika', '--collect-all', 'onnxruntime', '--collect-all', 'markitdown',
     ]
     if gui:
-        args.extend(['--collect-all', 'customtkinter', '--collect-all', 'tkinterdnd2'])
+        args.extend([
+            '--collect-all', 'customtkinter', '--collect-all', 'tkinterdnd2',
+            '--hidden-import', 'PIL._tkinter_finder', '--hidden-import', 'PIL._imagingtk',
+        ])
         for asset in ('app.ico', 'app.png', 'logo.png'):
             args.extend(['--add-data', f'assets/{asset}:assets'])
     if sys.platform == 'win32':

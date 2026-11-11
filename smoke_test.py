@@ -28,7 +28,7 @@ def sample_pdf(path):
 def run(report):
     from app import App
     with tempfile.TemporaryDirectory(prefix='pdf2md-test-') as temp:
-        root = Path(temp)
+        root = Path(temp).resolve()
         source = root / 'documento com espaços.pdf'
         sample_pdf(source)
         target = convert_pdf(source, root)
