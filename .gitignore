@@ -1,0 +1,9 @@
+.venv/
+build/
+dist/
+__pycache__/
+*.spec
+build.log
+build-*.log
+.DS_Store
+smoke-result*.txt
