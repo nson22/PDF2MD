@@ -26,6 +26,8 @@ def sample_pdf(path):
 
 
 def run(report):
+    # Surface the original import error before MarkItDown wraps it.
+    __import__('pdfplumber')
     from app import App
     with tempfile.TemporaryDirectory(prefix='pdf2md-test-') as temp:
         root = Path(temp).resolve()
